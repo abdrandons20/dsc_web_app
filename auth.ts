@@ -13,8 +13,8 @@ import { compare } from "bcryptjs";
 export const { handlers, signIn, signOut, auth } = NextAuth({
   providers: [
     GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+      clientId: String(process.env.GOOGLE_CLIENT_ID),
+      clientSecret: String(process.env.GOOGLE_CLIENT_SECRET),
     }),
     Credentials({
       credentials: {
